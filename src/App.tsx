@@ -290,7 +290,7 @@ const ROADMAP_PHASES = [
     phase: "Phase 5",
     subtitle: "The Horizon",
     title: "디테일 수정 및 앱 완성",
-    progress: 0,
+    progress: 100,
     details: [
       "애플리케이션 완성: 앱 내 기능과 디테일, 피드백을 반영하여 누구나 차별 없이 공연의 감동에 닿을 수 있는 최종 스마트폰 앱을 출시할 예정입니다.",
       "생태계 확장: 궁극적으로 시설 운영자의 자발적 개선을 유도하는 '접근성 랭킹 시스템'을 도입하여 지속 가능한 공연 문화를 만들어갈 것입니다."
@@ -1597,6 +1597,8 @@ const SectionFinal = () => {
     return (match && match[2].length === 11) ? match[2] : 'R3IuX2aGjX4';
   };
 
+
+
   const menuItems = [
     { label: "1. 프로젝트 개요", desc: "추진 배경, 필요성 및 프로젝트 목표" },
     { label: "2. 기획 및 요구사항", desc: "시장 조사, 타겟층 및 핵심 기능 정의" },
@@ -1843,36 +1845,131 @@ const SectionFinal = () => {
 
                       <div className="space-y-4">
                         <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-2">
-                          <BarChart3 size={18} className="text-blue-600" /> 2.1. 유사 서비스 비교 분석
+                          <Activity size={18} className="text-blue-600" /> 2.1. 시장 조사 및 타겟 분석
                         </h3>
-                        <p className="text-sm text-gray-600 leading-relaxed font-sans mb-4">
-                          국내외 접근성 및 시야 정보 서비스들의 분석을 통해, 403 BYPASS만의 독창적 포지셔닝(무장애 원스톱 가치 창출)을 실증하였습니다.
-                        </p>
-                        <CompetitionAnalysis />
+                        
+                        <p className="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest mb-1">시장 유사 서비스 비교 조사</p>
+                        <div className="overflow-x-auto border border-gray-250 rounded-xl shadow-sm">
+                          <table className="w-full text-left border-collapse text-xs">
+                            <thead>
+                              <tr className="bg-gray-100 text-gray-700 font-bold border-b border-gray-200">
+                                <th className="p-3">서비스명</th>
+                                <th className="p-3">카테고리</th>
+                                <th className="p-3 text-center">좌석 시야</th>
+                                <th className="p-3 text-center">접근성 정보</th>
+                                <th className="p-3">한계점 및 극복</th>
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-gray-100 bg-white">
+                              {['인터파크', '놀(Nol)', '멜론티켓'].map((name) => (
+                                <tr key={name} className="hover:bg-gray-50/50">
+                                  <td className="p-2.5 font-bold text-gray-900">{name}</td>
+                                  <td className="p-2.5 text-gray-500">예매</td>
+                                  <td className="p-2.5 text-center text-red-500 font-bold">X</td>
+                                  <td className="p-2.5 text-center text-red-500 font-bold">X</td>
+                                  <td className="p-2.5 text-gray-600">접근성 관련 정보 자체가 완전히 전무함</td>
+                                </tr>
+                              ))}
+                              <tr className="hover:bg-gray-50/50">
+                                <td className="p-2.5 font-bold text-gray-900">자리어때</td>
+                                <td className="p-2.5 text-gray-500">시야</td>
+                                <td className="p-2.5 text-center text-emerald-500 font-extrabold">O (사진)</td>
+                                <td className="p-2.5 text-center text-yellow-600 font-bold">일부 텍스트</td>
+                                <td className="p-2.5 text-gray-600">무분별한 광고 게재 및 불편하고 구식인 UI/UX</td>
+                              </tr>
+                              <tr className="hover:bg-gray-50/50">
+                                <td className="p-2.5 font-bold text-gray-900">오프메이트</td>
+                                <td className="p-2.5 text-gray-500">시야</td>
+                                <td className="p-2.5 text-center text-emerald-500 font-extrabold">O</td>
+                                <td className="p-2.5 text-center text-red-500 font-bold">X</td>
+                                <td className="p-2.5 text-gray-600">좌석 뷰에만 전념하여 접근성 인프라 부재</td>
+                              </tr>
+                              <tr className="hover:bg-gray-50/50">
+                                <td className="p-2.5 font-bold text-gray-900">시야(Seeya)</td>
+                                <td className="p-2.5 text-gray-500">시야</td>
+                                <td className="p-2.5 text-center text-emerald-500 font-extrabold">O</td>
+                                <td className="p-2.5 text-center text-yellow-600 font-bold">후기 병행</td>
+                                <td className="p-2.5 text-gray-600">단순 조명·음향 후기에 국한된 좁은 반경</td>
+                              </tr>
+                              <tr className="hover:bg-gray-50/50">
+                                <td className="p-2.5 font-bold text-gray-900">S-MAP</td>
+                                <td className="p-2.5 text-gray-500">지도</td>
+                                <td className="p-2.5 text-center text-red-500 font-bold">X</td>
+                                <td className="p-2.5 text-center text-red-500 font-bold">X</td>
+                                <td className="p-2.5 text-gray-600">광역 지도 위주로 실내 상세 모델링 부족</td>
+                              </tr>
+                              <tr className="hover:bg-gray-50/50">
+                                <td className="p-2.5 font-bold text-gray-900">Theatre Access NYC</td>
+                                <td className="p-2.5 text-gray-500">접근성</td>
+                                <td className="p-2.5 text-center text-red-500 font-bold">X</td>
+                                <td className="p-2.5 text-center text-emerald-500 font-extrabold">O</td>
+                                <td className="p-2.5 text-gray-600">뉴욕에 국한된 해외 로컬 대상 서비스</td>
+                              </tr>
+                              <tr className="hover:bg-gray-50/50">
+                                <td className="p-2.5 font-bold text-gray-900">Sociability</td>
+                                <td className="p-2.5 text-gray-500">접근성</td>
+                                <td className="p-2.5 text-center text-red-500 font-bold">X</td>
+                                <td className="p-2.5 text-center text-emerald-500 font-extrabold">O</td>
+                                <td className="p-2.5 text-gray-600">영국 위주이며 상호 예약 등의 생태계 미흡</td>
+                              </tr>
+                              <tr className="bg-blue-50/60 font-bold">
+                                <td className="p-3 text-blue-600 font-black">403 BYPASS</td>
+                                <td className="p-3 text-blue-500">종합 통합</td>
+                                <td className="p-3 text-center text-blue-600 font-black">O (360 VR)</td>
+                                <td className="p-3 text-center text-blue-600 font-black">O (필터+3D)</td>
+                                <td className="p-3 text-blue-900 font-extrabold bg-blue-100/40">장벽 파괴형 모든 올인원(All-in-One) 솔루션</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+
+                        <div className="mt-6">
+                          <p className="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest mb-3">주요 타겟 사용자 페르소나 및 맵핑</p>
+                          <div className="grid sm:grid-cols-2 gap-4">
+                            {[
+                              { type: "휠체어·이동 약자", text: "계단, 가파른 단차, 접근 안내 동선 협소", sol: "3D 실내 안내 지도, S-MAP 입체 안내, AR 배리어프리 전용 우회 경로" },
+                              { type: "청각 장애인", text: "공연 자막 자막 누락, 현장 긴급 실시간 알림 음향 단절", sol: "충무아트센터 가상 AR 자막 안경 제어, 모바일 자막 동기화 송출" },
+                              { type: "시각 장애인", text: "어두운 화면 UI 및 티켓 예매처 리더 에러", sol: "웹 접근성 준수, TTS 로컬 마크업 스피커 가이드, 음성 액션 제어" },
+                              { type: "신경다양성 관람객 (ADHD 등)", text: "돌발 소음, 극도로 복잡한 인파 밀집 불안", sol: "실시간 로비·MD 부스 혼잡 지표, 한산한 최적 진입 시간대 권장" },
+                              { type: "고령 관람층", text: "지나치게 축소된 텍스트 장벽, 스마트 지문 스와이프 복잡성", sol: "통합 조작 센터 가변 거대 폰트 스케일, 간편 웰컴 버튼 패널" },
+                              { type: "비장애인 일반 관객", text: "시야 정보 파편화, 배리어프리 정보 부족", sol: "전 좌석 시야 확인 및 가계정 연동을 포함한 고도화 플랫폼 통합 해결" }
+                            ].map((user, i) => (
+                              <div key={i} className="border border-gray-150 p-4 rounded-xl hover:border-blue-300 transition-all bg-[#FAFAFC]">
+                                <div className="text-xs font-black text-blue-600 mb-1">TARGET {i+1}</div>
+                                <h4 className="text-sm font-bold text-gray-900 mb-2">{user.type}</h4>
+                                <div className="space-y-1 text-xs">
+                                  <p className="text-red-600 font-sans"><strong className="text-gray-500">한계:</strong> {user.text}</p>
+                                  <p className="text-emerald-700 font-sans"><strong className="text-gray-500">솔루션:</strong> {user.sol}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
                       </div>
 
                       <div className="space-y-4">
                         <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-2">
-                          <Users size={18} className="text-blue-600" /> 2.2. 핵심 타겟층 정의
+                          <CheckCircle2 size={18} className="text-blue-600" /> 2.2. 서비스 핵심 기능 정의
                         </h3>
-                        <div className="grid sm:grid-cols-2 gap-4">
-                          <div className="bg-[#FAFAFC] border border-gray-200 p-5 rounded-xl">
-                            <h4 className="text-sm font-bold text-[#05060F] mb-2 flex items-center gap-1.5 font-sans">
-                              <span className="w-2 h-2 rounded-full bg-blue-600"></span> 관람약자 (장애인·안내견 동반층)
-                            </h4>
-                            <p className="text-xs text-gray-600 leading-relaxed font-sans break-keep">
-                              도보 이동 단차, 휠체어 전용 시설, 잔존 시력 맞춤 UI, 실물 자원봉사 및 구역별 무장애 정보가 극도로 분절되어 활동에 극심한 불안을 겪는 주 관객군입니다.
-                            </p>
-                          </div>
-                          
-                          <div className="bg-[#FAFAFC] border border-gray-200 p-5 rounded-xl">
-                            <h4 className="text-sm font-bold text-[#05060F] mb-2 flex items-center gap-1.5 font-sans">
-                              <span className="w-2 h-2 rounded-full bg-emerald-600"></span> 배리어프리 파트너 (자원봉사자·동반인)
-                            </h4>
-                            <p className="text-xs text-gray-650 leading-relaxed font-sans break-keep">
-                              이동 보조, 안내 보조 및 기동 보조를 도우려는 건강한 일반인 크루로, 플랫폼 내에서 일대일 실시간 위치 지정 점검 매칭에 협력합니다.
-                            </p>
-                          </div>
+                        <div className="grid sm:grid-cols-2 gap-3">
+                          {[
+                            { name: "접근성 필터링 검색", desc: "휠체어석, 자막 제공, 수어 통역, 음성해설 제공 여부 기반 세부 공연 매핑" },
+                            { name: "좌석 시야 확인", desc: "360도 가상 VR 이미징 기반으로 각 구역별 시야 방해 요소 선제적 정찰" },
+                            { name: "수어/자막 지원 정보", desc: "지원 정보 아이콘 및 커스텀 인포 뱃지를 통해 한눈에 배리어프리 목록 체크" },
+                            { name: "편의시설 혼잡도 확인", desc: "화장실, MD 스토어, 매표 카운터 등의 로비 혼잡 정도를 정체 지수로 확인" },
+                            { name: "3D 및 AR 기반 길 찾기", desc: "서울시 S-MAP 레이아웃 가상 투사 및 카메라 AR 뷰 지상 가상선 가이드" },
+                            { name: "접근성 매니저 매칭", desc: "도움이 절대적으로 절실한 관객을 위해 1:1 도우미 매니저 현장 동행 예약 서비스" },
+                            { name: "AR 자막안경 제어 및 대여", desc: "실제 안경형 기기 대여 상태 연동 및 디스플레이 자막 자간/크기 제어 동화" },
+                            { name: "선호 맞춤 AI 알고리즘", desc: "공연 추천 유니버셜 프로파일과 사용자 데이터 장르 추천 융합 최우선 처리" }
+                          ].map((f, i) => (
+                            <div key={i} className="bg-white border border-gray-200 p-4 rounded-xl flex items-start gap-3">
+                              <span className="bg-blue-50 text-blue-600 w-5 h-5 rounded-full flex items-center justify-center font-mono font-bold text-[10px] shrink-0 mt-0.5">{i+1}</span>
+                              <div>
+                                <h4 className="text-xs font-bold text-gray-950 mb-0.5">{f.name}</h4>
+                                <p className="text-[11px] text-gray-600 font-sans leading-relaxed break-keep">{f.desc}</p>
+                              </div>
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
@@ -1927,7 +2024,7 @@ const SectionFinal = () => {
                         
                         <div className="grid sm:grid-cols-3 gap-4">
                           <div className="bg-[#05060E] text-white p-5 rounded-xl border border-white/10">
-                            <span className="text-[10px] font-mono text-[#00BFFF] font-black tracking-widest block uppercase mb-2">Visual Guideline</span>
+                            <span className="text-[10px] font-mono text-[#00BFFF] font-black tracking-widest block uppercase mb-2">Visal Guideline</span>
                             <h4 className="text-sm font-bold mb-2">비주얼 아이덴티티</h4>
                             <ul className="text-xs text-gray-300 space-y-1.5 list-disc pl-4 font-sans">
                               <li>배경: 무대 감성을 극대화하고 저시력 및 잔존 시력 가독성을 한계까지 높이는 <span className="text-white font-bold">Midnight Dark Theme</span></li>
@@ -2005,9 +2102,6 @@ const SectionFinal = () => {
                           {[
                             { name: "공연 데이터 (Performance Schema)", items: ["공연 ID (PK), 제목, 장르, 공연장 코드, 날짜", "포스터 URI, 좌석 배치 맵핑 노드 데이터", "접근성 플래그 (휠체어/자막/수어/음성)"] },
                             { name: "사용자 정보 (User Profiling)", items: ["유저 고유 ID (PK), 이름, 이메일, 인증 토큰", "장벽 프로필 (지체/초점/청각 범위 입력)", "사전 예약 및 찜 목록, 히스토리 리스트"] },
-                            { name: "공연장 인프라 정보 (Venue Asset)", items: ["공연장 ID (PK), 명칭, 실제 도면 좌표 데이터", "편의시설 노드 번호 (비상구/엘리베이터/화장실)", "단차 각도, 우회 램프 경사 실측 통계 피드"] },
-                            { name: "실시간 지원 매니저 (Care Agent)", items: ["매니저 고유번호 (PK), 닉네임, 매칭 일정표", "지원 우세 기술 코드 (수어/휠체어보조/시각동행)", "실시간 근무 장소 GPS 데이터, 활동 일지"] },
-                            { name: "통합 예약 정보 (Reservation Mapping)", items: ["티켓 예약번호 (PK), 공연 ID, 좌석 행렬 부호", "동반 일반인 결합 좌석 번들 세트 번호", "정부인증 지연 태그 플래그 (현장 완료전 가승인)"] }
                           ].map((schema, sIdx) => (
                             <div key={sIdx} className="bg-white border border-gray-250 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow">
                               <h4 className="text-xs font-black text-blue-600 uppercase tracking-wider mb-3 flex items-center gap-1">
@@ -2030,10 +2124,10 @@ const SectionFinal = () => {
                         <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-2">
                           <Rocket size={18} className="text-blue-600" /> 4.3. 핵심 기능 구현 과정
                         </h3>
-                        <div className="border-l-2 border-blue-200 pl-4 ml-2 space-y-6 text-xs font-sans">
+                        <div className="border-l-2 border-blue-200 pl-4 ml-2 space-y-6 text-xs">
                           <div className="relative">
                             <span className="absolute -left-[25px] top-0.5 bg-blue-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold">1</span>
-                            <h4 className="font-bold text-sm text-gray-950 mb-1 font-sans">공공 데이터 연동 수립</h4>
+                            <h4 className="font-bold text-sm text-gray-950 mb-1">공공 데이터 연동 수립</h4>
                             <p className="text-gray-600 leading-relaxed font-sans break-keep">
                               서울시에서 승인한 고밀도 S-MAP 도심 포탈과 또타지하철 역사 실시간 승강기 오작동 여부 가용 오픈 API를 전면 수신 매핑 처리하고, 티켓 오픈 대응을 위해 인터파크·YES24 연결망을 안정적으로 가이드 아웃링크 처리했습니다.
                             </p>
@@ -2041,7 +2135,7 @@ const SectionFinal = () => {
 
                           <div className="relative">
                             <span className="absolute -left-[25px] top-0.5 bg-blue-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold">2</span>
-                            <h4 className="font-bold text-sm text-gray-950 mb-1 font-sans">웹 접근성 최우선 마크업 작업</h4>
+                            <h4 className="font-bold text-sm text-gray-950 mb-1">웹 접근성 최우선 마크업 작업</h4>
                             <p className="text-gray-600 leading-relaxed font-sans break-keep">
                               리더기 충돌 방지를 위해 `aria-label`을 전면 도입하고 화면 낭독용 간편 합성 보조 및 다크 하이콘트라스트 토글링 연동 프로세싱을 선구적으로 작성했습니다. 색에 관계없이 요소 구분을 확실하게 처리하기 위해 텍스트 수반을 상시 병합했습니다.
                             </p>
@@ -2049,7 +2143,7 @@ const SectionFinal = () => {
 
                           <div className="relative">
                             <span className="absolute -left-[25px] top-0.5 bg-blue-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold">3</span>
-                            <h4 className="font-bold text-sm text-gray-950 mb-1 font-sans">인공지능 어시스트 최적 랭킹 알고리즘</h4>
+                            <h4 className="font-bold text-sm text-gray-950 mb-1">인공지능 어시스트 최적 랭킹 알고리즘</h4>
                             <p className="text-gray-600 leading-relaxed font-sans break-keep">
                               고객이 사전에 온보딩 단계에서 설정한 접근성 등급 목록 가치와 선호 장르(뮤지컬, 연극, 콘서트 등)의 교집합 비중을 고르게 분배하여 홈화면 피드를 장식하며 최적 매각을 유도합니다.
                             </p>
@@ -2057,7 +2151,7 @@ const SectionFinal = () => {
 
                           <div className="relative">
                             <span className="absolute -left-[25px] top-0.5 bg-blue-600 text-white w-4 h-4 rounded-full flex items-center justify-center text-[9px] font-bold">4</span>
-                            <h4 className="font-bold text-sm text-gray-950 mb-1 font-sans">카메라 AR 지상선 뷰어 및 VR 360 공간</h4>
+                            <h4 className="font-bold text-sm text-gray-950 mb-1">카메라 AR 지상선 뷰어 및 VR 360 공간</h4>
                             <p className="text-gray-600 leading-relaxed font-sans break-keep">
                               기기의 후방 자이로/카메라 권한을 얻어 가독 지상 화살표 동행 선을 현실에 겹치고 소극장들의 인프라 단층을 VR 뷰 컴포넌트로 포장하여 방문 전에 실제 분위기를 감각적으로 체험하도록 구현을 완성했습니다.
                             </p>
@@ -2076,7 +2170,7 @@ const SectionFinal = () => {
                           <p className="text-sm text-gray-750 leading-relaxed break-keep font-sans">
                             VR과 비슷한 화면을 이전에 만들어본 경험이 없어 <strong>ChatGPT</strong>에게 예시 사진을 넣어 VR을 제작하는 방법에 대해 물어봤더니 가장 추천하는 한 가지 방식을 알려주었다. GPT가 추천한 방식은 다음과 같다.
                           </p>
-                          <div className="grid sm:grid-cols-2 gap-4 font-sans">
+                          <div className="grid sm:grid-cols-2 gap-4">
                             <div className="bg-white border border-gray-150 p-4 rounded-xl shadow-sm space-y-2">
                               <span className="inline-block bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded-full font-mono">STEP 1. 파노라마 촬영</span>
                               <h4 className="text-xs font-black text-gray-950">P360 앱 &amp; 비율 변환</h4>
@@ -2095,16 +2189,48 @@ const SectionFinal = () => {
                         </div>
 
                         {/* Production Narrative Card */}
-                        <div className="bg-white border border-gray-150 rounded-2xl p-5 space-y-3 shadow-sm font-sans">
-                          <span className="text-[9px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-full font-bold inline-block font-mono">BEHIND STORY &amp; SHOOTING</span>
+                        <div className="bg-white border border-gray-150 rounded-2xl p-5 space-y-3 shadow-sm">
+                          <span className="text-[9px] bg-slate-100 text-slate-705 px-2 py-0.5 rounded-full font-bold inline-block font-mono">BEHIND STORY &amp; SHOOTING</span>
                           <h4 className="font-extrabold text-sm text-gray-950">촬영 스토리 및 진행 과정</h4>
                           <p className="text-xs text-gray-650 leading-relaxed font-sans break-keep">
                             방식이 어렵지 않다고 판단해 다음날 수업이 끝난 후부터 본격적으로 제작을 시작했다. 빈 강의실을 찾아 이곳저곳 다니던 중 <strong>10관 3층의 10318 강의실</strong>이 비어있어 촬영을 시작하게 되었다. 촬영은 GPT가 얘기한 방식을 따라 사용자들에게 보여주고 싶은 경로별로 조금씩 이동하며 촬영하였다.
                           </p>
                         </div>
 
+                        {/* Panoramic Shot Image Placements */}
+                        <div className="space-y-6">
+                          <h4 className="text-xs font-black text-slate-800 tracking-wider uppercase font-mono mb-2 flex items-center gap-1.5">
+                            📸 파노라마 촬영 및 2:1 변환 결과물
+                          </h4>
+                          <div className="space-y-6">
+                            {/* Row 1: Image 1 */}
+                            <div className="space-y-2 bg-slate-50 border border-gray-150 p-4 rounded-2xl">
+                              <PromoImageWithPlaceholder 
+                                src={image1} 
+                                label="이미지 1" 
+                                alt="P360 파노라마 촬영 원본" 
+                                description="P360 앱으로 촬영한 파노라마"
+                                hideCardDetails={true}
+                              />
+                              <p className="text-[11.5px] text-center text-gray-650 font-bold font-sans pt-1">▲ P360 앱으로 촬영한 파노라마</p>
+                            </div>
+
+                            {/* Row 2: Images 2-6 (2:1 변환 파노라마들) */}
+                            <div className="space-y-4 bg-slate-50 border border-gray-150 p-4 rounded-2xl">
+                              <div className="space-y-4">
+                                <PromoImageWithPlaceholder src={image2} label="이미지 2" alt="2:1 P360 파노라마 변환 1" hideCardDetails={true} />
+                                <PromoImageWithPlaceholder src={image3} label="이미지 3" alt="2:1 P360 파노라마 변환 2" hideCardDetails={true} />
+                                <PromoImageWithPlaceholder src={image4} label="이미지 4" alt="2:1 P360 파노라마 변환 3" hideCardDetails={true} />
+                                <PromoImageWithPlaceholder src={image5} label="이미지 5" alt="2:1 P360 파노라마 변환 4" hideCardDetails={true} />
+                                <PromoImageWithPlaceholder src={image6} label="이미지 6" alt="2:1 P360 파노라마 변환 5" hideCardDetails={true} />
+                              </div>
+                              <p className="text-[11.5px] text-center text-gray-650 font-bold font-sans pt-1">▲ P360 앱의 3일 무료 혜택을 이용해 2:1 비율로 변환시킨 파노라마 사진</p>
+                            </div>
+                          </div>
+                        </div>
+
                         {/* Marzipano Editing Challenge Card */}
-                        <div className="space-y-4 font-sans">
+                        <div className="space-y-4">
                           <div className="bg-gradient-to-br from-slate-50 to-slate-100 border border-gray-150 p-5 rounded-2xl flex flex-col justify-center space-y-3">
                             <span className="text-[9px] bg-amber-100 text-amber-800 px-2 py-0.5 rounded-full font-bold w-max font-mono">EDITING SYSTEM WARNING</span>
                             <h4 className="font-extrabold text-sm text-gray-950">Marzipano 편집 및 데이터 보존 챌린지</h4>
@@ -2112,11 +2238,23 @@ const SectionFinal = () => {
                               Marzipano 사이트는 사이트 자체에 편집 내용이 저장되는 백엔드 데이터베이스 세션 기능이 없어, 무조건 중단 없이 한 번에 완성하고 파일 다운로드를 하는 방법만을 사용해야 했다. 혹여나 브라우저 탭이 닫히거나 데이터가 증발할 위험이 있어 <strong>노트북을 3일 정도 전원을 끄지 못하고 사용하지 않을 때는 절전 모드 상태로 유지하며</strong> 극적으로 완성에 성공했습니다.
                             </p>
                           </div>
+                          
+                          {/* Row 3 - Image 7 */}
+                          <div className="bg-slate-50 border border-gray-150 p-4 rounded-2xl">
+                            <PromoImageWithPlaceholder 
+                              src={image7} 
+                              label="이미지 7" 
+                              alt="Marzipano Info Hotspot Edit Screen" 
+                              description="Marzipano에서 Info hotspot 버튼을 첨부한 화면"
+                              hideCardDetails={true}
+                            />
+                            <p className="text-[11.5px] text-center text-gray-650 font-bold font-sans pt-1">▲ Marzipano에서 Info hotspot 버튼을 첨부한 화면</p>
+                          </div>
                         </div>
 
                         {/* GitHub Deploy Experience Card with Desktop App */}
-                        <div className="space-y-4 pt-4 font-sans">
-                          <div className="bg-white border border-gray-150 p-5 rounded-2xl flex flex-col justify-center space-y-3 shadow-sm">
+                        <div className="space-y-4 pt-4">
+                          <div className="bg-white border border-gray-250 p-5 rounded-2xl flex flex-col justify-center space-y-3 shadow-sm">
                             <span className="text-[9px] bg-blue-50 text-blue-650 px-2 py-0.5 rounded-full font-bold w-max font-mono">VERSION CONTROL RESOLUTION</span>
                             <h4 className="font-extrabold text-sm text-gray-950">대용량 파일 깃허브 업로드 해법 수립</h4>
                             <p className="text-xs text-gray-650 leading-relaxed font-sans break-keep">
@@ -2124,17 +2262,29 @@ const SectionFinal = () => {
                               이를 해결하기 위해 ChatGPT에게 방법을 문의한 결과, <strong>GitHub Desktop (깃허브 데스크톱) 앱</strong>을 로컬에 받아 연동하라는 안내를 받았습니다. GPT가 상세히 조언해준 방법을 따라 손쉽게 리포지토리를 복제하고 단 한 번의 푸시로 <strong>총 645개의 정적 가상현실 에셋 파일</strong>을 누락 없이 무사히 깃허브에 배포할 수 있었습니다.
                             </p>
                           </div>
+
+                          {/* Row 4 - Image 8 */}
+                          <div className="bg-slate-50 border border-gray-150 p-4 rounded-2xl">
+                            <PromoImageWithPlaceholder 
+                              src={image8} 
+                              label="이미지 8" 
+                              alt="GitHub Desktop File Upload Screen" 
+                              description="깃허브 데스크톱을 이용하여 파일을 업로드하는 화면"
+                              hideCardDetails={true}
+                            />
+                            <p className="text-[11.5px] text-center text-gray-650 font-bold font-sans pt-1">▲ 깃허브 데스크톱을 이용하여 파일을 업로드하는 화면</p>
+                          </div>
                         </div>
 
                         {/* ChatGPT Log Links List */}
-                        <div className="bg-[#10A37F]/5 border border-[#10A37F]/20 rounded-2xl p-5 space-y-3 font-sans">
+                        <div className="bg-[#10A37F]/5 border border-[#10A37F]/20 rounded-2xl p-5 space-y-3">
                           <div className="flex items-center gap-2">
                             <div className="w-6 h-6 rounded-lg bg-[#10A37F] flex items-center justify-center text-white">
                               <MessageSquare size={14} />
                             </div>
                             <h4 className="text-xs font-bold text-[#10A37F] font-mono tracking-widest uppercase">ChatGPT INTERACTION DIALOG LOGS</h4>
                           </div>
-                          <p className="text-xs text-gray-655 leading-relaxed break-keep font-sans">
+                          <p className="text-xs text-gray-650 leading-relaxed break-keep font-sans">
                             360도 공간 뷰어 개발 전 정보 수집 단계와 업로드 과정에서 겪었던 시행착오를 신속하게 대응하며 ChatGPT와 해결책을 수립했던 실제 대화 전문 로그입니다.
                           </p>
                           <div className="grid sm:grid-cols-2 gap-3 pt-1">
@@ -2265,10 +2415,10 @@ const SectionFinal = () => {
                       {/* Sub-tabs inside Section 6 */}
                       <div className="flex border-b border-gray-200 overflow-x-auto gap-2 pb-1 scrollbar-none font-bold text-sm">
                         {[
-                          { id: '6-1', label: '6-1. 이동 (안내·길안내·지하철)' },
+                          { id: '6-1', label: '6-1. 이동 (안내·길안내)' },
                           { id: '6-2', label: '6-2. 현장 (혼잡도·360VR)' },
                           { id: '6-3', label: '6-3. 지원 (현장매칭·자막안경·소셜)' },
-                          { id: '6-4', label: '6-4. 개인화 (추천·접근센터·마이)' }
+                          { id: '6-4', label: '6-4. 개인화 (접근센터·마이)' }
                         ].map((sub) => (
                           <button
                             key={sub.id}
@@ -2577,9 +2727,7 @@ const SectionFinal = () => {
                         <h3 className="text-lg font-bold text-gray-900 flex items-center gap-2 border-b border-gray-100 pb-2">
                           <Video size={18} className="text-blue-600" /> 7.3. 광고 영상
                         </h3>
-                        <p className="text-sm text-gray-650 leading-relaxed font-sans break-keep">
-                          스마트 안경 연동 연계 기술과 이동약자 무단차 동선 안내의 직관적인 혜택을 대대적으로 각인하기 위해, 시각적 주목도가 압도적인 <strong>타이포그래픽 광고 영상</strong>을 제공합니다. 아래 유튜브 링크 설정을 통해 원하는 홍보 동영상을 삽입하고 실시간으로 시청하실 수 있습니다.
-                        </p>
+
 
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
                           <div className="lg:col-span-8 bg-[#0F172A] border border-slate-800 rounded-3xl overflow-hidden shadow-xl aspect-video relative flex flex-col justify-between">
@@ -2834,6 +2982,7 @@ const SectionFinal = () => {
                       onClick={() => {
                         const newIdx = activeTab - 1;
                         setActiveTabTab(newIdx);
+                        if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); }
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       className="flex-1 text-left p-4 rounded-xl border border-gray-200 hover:border-blue-500 hover:bg-blue-50/10 transition-all group flex flex-col justify-center h-full min-h-[70px]"
@@ -2850,6 +2999,7 @@ const SectionFinal = () => {
                   <button
                     onClick={() => {
                       setActiveTabTab(null);
+                      if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); }
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }}
                     className="px-6 py-4 rounded-xl border border-gray-205 hover:border-blue-500 hover:bg-blue-50/10 text-gray-700 hover:text-blue-600 font-black text-xs flex flex-col items-center justify-center gap-1.5 transition-all uppercase font-mono tracking-wider min-h-[70px]"
@@ -2867,6 +3017,7 @@ const SectionFinal = () => {
                       onClick={() => {
                         const newIdx = activeTab + 1;
                         setActiveTabTab(newIdx);
+                        if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); }
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       className="flex-1 text-right p-4 rounded-xl border border-gray-200 hover:border-blue-500 hover:bg-blue-50/10 transition-all group flex flex-col justify-center items-end h-full min-h-[70px]"
@@ -2893,6 +3044,7 @@ const SectionFinal = () => {
                           key={idx}
                           onClick={() => {
                             setActiveTabTab(idx);
+                            if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); }
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                           }}
                           className={`p-3 rounded-xl border text-left transition-all flex flex-col justify-between ${
@@ -2957,6 +3109,7 @@ const SectionFinal = () => {
                       onClick={() => {
                         setActiveTabTab(idx);
                         setIsFabHovered(false);
+                        if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); }
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       className={`w-full text-left px-3 py-2 rounded-lg text-xs transition-colors flex items-center justify-between ${
@@ -2984,6 +3137,7 @@ const SectionFinal = () => {
                 setActiveTabTab(0);
               } else {
                 setActiveTabTab(null);
+                if ('speechSynthesis' in window) { window.speechSynthesis.cancel(); }
               }
             }}
             className="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-[0_8px_25px_rgba(37,99,235,0.45)] cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300 relative"
@@ -3025,7 +3179,7 @@ const SectionFinal = () => {
           </button>
         </motion.div>
 
-
+        {/* Footer Encouragement Banner */}
 
       </div>
     </div>
