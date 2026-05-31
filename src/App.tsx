@@ -655,7 +655,7 @@ const SectionTicket = ({ grid }: { grid: CellData[][] }) => {
   };
 
   const handleReserve = () => {
-    window.open('https://403bypass-26.vercel.app/', '_blank');
+    window.open('https://eta-403-bypass.vercel.app/', '_blank');
   };
 
   return (
@@ -973,7 +973,7 @@ const SectionMid = ({ setActiveTab }: { setActiveTab: (v: string) => void }) => 
                    </p>
                 </div>
                 <button 
-                  onClick={() => window.open('https://403bypass-26.vercel.app/', '_blank')}
+                  onClick={() => window.open('https://eta-403-bypass.vercel.app/', '_blank')}
                   className="bg-[#00BFFF] text-black px-8 py-4 rounded-full font-black flex items-center gap-2 whitespace-nowrap shadow-[0_0_20px_rgba(0,191,255,0.4)] hover:shadow-[0_0_40px_rgba(0,191,255,0.6)] transition-all"
                 >
                   403BYPASS 미리보기 <ChevronRight size={20} strokeWidth={3} />
@@ -1635,17 +1635,17 @@ const SectionFinal = () => {
               </p>
               <div className="flex flex-wrap gap-3 text-xs sm:text-sm font-mono text-gray-300">
                 <span className="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
-                  모바일 앱: <a href="https://bypass-b5ly.vercel.app" target="_blank" rel="noreferrer" className="text-[#00BFFF] hover:underline font-bold">https://bypass-b5ly.vercel.app</a>
+                  모바일 앱: <a href="https://eta-403-bypass.vercel.app/" target="_blank" rel="noreferrer" className="text-[#00BFFF] hover:underline font-bold">https://eta-403-bypass.vercel.app/</a>
                 </span>
                 <span className="bg-white/5 border border-white/10 px-3 py-1.5 rounded-lg">
-                  프로젝트 사이트: <a href="https://403-bypass.vercel.app" target="_blank" rel="noreferrer" className="text-[#00BFFF] hover:underline font-bold">https://403-bypass.vercel.app</a>
+                  프로젝트 사이트: <a href="https://403-bypass-1aug.vercel.app/" target="_blank" rel="noreferrer" className="text-[#00BFFF] hover:underline font-bold">https://403-bypass-1aug.vercel.app/</a>
                 </span>
               </div>
             </div>
             
             <div className="shrink-0 flex flex-col sm:flex-row md:flex-col lg:flex-row gap-3">
               <button
-                onClick={() => window.open('https://bypass-b5ly.vercel.app', '_blank')}
+                onClick={() => window.open('https://eta-403-bypass.vercel.app/', '_blank')}
                 className="bg-[#00BFFF] text-[#05060F] hover:bg-white hover:shadow-[0_0_20px_rgba(0,191,255,0.6)] px-6 py-3.5 rounded-xl font-black text-sm tracking-wide transition-all duration-300 flex items-center justify-center gap-2"
               >
                 <Smartphone size={16} strokeWidth={2.5} /> 실제 앱 실행하기 <ArrowRight size={16} strokeWidth={2.5} />
@@ -2389,11 +2389,11 @@ const SectionFinal = () => {
                           </div>
                           <div className="flex justify-between border-b border-gray-200 pb-2">
                             <span className="font-bold text-gray-500">실서비스 가동 배포 URL (App ID)</span>
-                            <a href="https://bypass-b5ly.vercel.app" target="_blank" rel="noreferrer" className="text-blue-600 font-black underline hover:text-blue-800">https://bypass-b5ly.vercel.app</a>
+                            <a href="https://eta-403-bypass.vercel.app/" target="_blank" rel="noreferrer" className="text-blue-600 font-black underline hover:text-blue-800">https://eta-403-bypass.vercel.app/</a>
                           </div>
                           <div className="flex justify-between pb-1">
                             <span className="font-bold text-gray-500">프로젝트 홍보 및 가이드 웹페이지</span>
-                            <a href="https://403-bypass.vercel.app" target="_blank" rel="noreferrer" className="text-blue-600 font-black underline hover:text-blue-800">https://403-bypass.vercel.app</a>
+                            <a href="https://403-bypass-1aug.vercel.app/" target="_blank" rel="noreferrer" className="text-blue-600 font-black underline hover:text-blue-800">https://403-bypass-1aug.vercel.app/</a>
                           </div>
                         </div>
                       </div>
