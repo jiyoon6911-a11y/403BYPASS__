@@ -2701,24 +2701,11 @@ const SectionFinal = () => {
                           </div>
                         </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-                          <div className="lg:col-span-2 bg-slate-50 border border-gray-200 p-5 rounded-2xl text-xs space-y-2 font-sans leading-relaxed flex flex-col justify-center">
-                            <p className="font-extrabold text-gray-950 text-sm flex items-center gap-1.5">🎖️ 서포터즈 리워드 체계</p>
-                            <p className="text-gray-650 text-xs sm:text-[13px] break-keep leading-relaxed pt-0.5">
-                              참가 활성화를 위하여 충무아트센터 공연 기여 할인권 제공, 1365 자원봉사 공인 시간 인증, 앱 마이페이지 한정판 훈장 뱃지 부여 등 입체적이고 지속가능한 헬퍼 순환 체계를 구현해 기여를 촉진합니다.
-                            </p>
-                          </div>
-
-                          <div className="border border-amber-200/60 bg-gradient-to-br from-amber-500/5 to-amber-500/15 p-5 rounded-2xl flex items-center justify-between shadow-sm hover:border-amber-400 transition-all group">
-                            <div className="space-y-1">
-                              <span className="text-[10px] font-bold text-amber-700 font-mono tracking-widest uppercase">IMPACT REWARDS</span>
-                              <h4 className="text-sm font-black text-slate-900 font-sans">배리어프리 리워드</h4>
-                              <p className="text-[11px] text-gray-500 font-sans">온오프라인 리워드 혜택</p>
-                            </div>
-                            <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-amber-400 to-amber-500 flex items-center justify-center text-white shadow-md shadow-amber-300/30 group-hover:scale-110 transition-transform duration-300">
-                              <Award size={22} className="text-white" />
-                            </div>
-                          </div>
+                        <div className="bg-slate-50 border border-gray-200 p-5 rounded-2xl text-xs space-y-2 font-sans leading-relaxed flex flex-col justify-center">
+                          <p className="font-extrabold text-gray-950 text-sm flex items-center gap-1.5">🎖️ 서포터즈 리워드 체계</p>
+                          <p className="text-gray-650 text-xs sm:text-[13px] break-keep leading-relaxed pt-0.5">
+                            참가 활성화를 위하여 충무아트센터 공연 기여 할인권 제공, 1365 자원봉사 공인 시간 인증, 앱 마이페이지 한정판 훈장 뱃지 부여 등 입체적이고 지속가능한 헬퍼 순환 체계를 구현해 기여를 촉진합니다.
+                          </p>
                         </div>
                       </div>
 
@@ -2728,46 +2715,15 @@ const SectionFinal = () => {
                           <Video size={18} className="text-blue-600" /> 7.3. 광고 영상
                         </h3>
 
-
-                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
-                          <div className="lg:col-span-8 bg-[#0F172A] border border-slate-800 rounded-3xl overflow-hidden shadow-xl aspect-video relative flex flex-col justify-between">
-                            <iframe
-                              className="w-full h-full min-h-[300px] sm:min-h-[400px]"
-                              src={`https://www.youtube.com/embed/${getYouTubeId(youtubeUrl)}`}
-                              title="403 BYPASS 홍보/광고 영상"
-                              frameBorder="0"
-                              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                              allowFullScreen
-                            ></iframe>
-                          </div>
-
-                          <div className="lg:col-span-4 flex flex-col justify-between bg-white border border-gray-200 p-5 rounded-3xl shadow-sm">
-                            <div className="space-y-4">
-                              <span className="font-mono text-[#0066FF] text-[10px] font-black tracking-widest block uppercase">YOUTUBE AD PLAYER</span>
-                              <h4 className="text-sm font-extrabold text-gray-950 flex items-center gap-1.5">
-                                <Video size={15} className="text-blue-600" /> 실시간 광고 시청 & 설정
-                              </h4>
-                              <p className="text-xs text-gray-500 leading-relaxed font-sans break-keep">
-                                아래 유튜브 공식 동영상 주소를 직접 변경하시면 실시간 광고 플레이어가 바뀐 화면을 보여줍니다.
-                              </p>
-
-                              <div className="space-y-2 pt-1">
-                                <label className="text-[10px] font-bold text-gray-400 uppercase font-mono tracking-wider">주소 및 링크 (YouTube Link)</label>
-                                <input
-                                  type="text"
-                                  value={youtubeUrl}
-                                  onChange={(e) => setYoutubeUrl(e.target.value)}
-                                  placeholder="유튜브 URL 주소를 입력하세요..."
-                                  className="w-full text-xs px-3 py-2.5 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 bg-slate-50 text-gray-800 font-sans font-medium hover:bg-slate-100 transition-all shadow-inner"
-                                />
-                              </div>
-                            </div>
-
-                            <div className="mt-4 bg-slate-50 border border-gray-150 p-4 rounded-2xl text-[11px] text-gray-600 space-y-1.5">
-                              <span className="font-bold text-slate-800 block mb-1">AD SLOGAN:</span>
-                              &ldquo;막혔던 입장(403 Forbidden)에서, <br />모두에게 평등한 우회로(403 BYPASS)로.&rdquo;
-                            </div>
-                          </div>
+                        <div className="w-full bg-[#0F172A] border border-slate-800 rounded-3xl overflow-hidden shadow-xl aspect-video relative">
+                          <iframe
+                            className="w-full h-full min-h-[300px] sm:min-h-[400px]"
+                            src={`https://www.youtube.com/embed/${getYouTubeId(youtubeUrl)}`}
+                            title="403 BYPASS 홍보/광고 영상"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          ></iframe>
                         </div>
                       </div>
 
